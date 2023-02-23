@@ -5,6 +5,7 @@ import java.util.Random;
 public class Main {
 
     public static void bogosort(int[] numeros, int n, Random gerador){
+	   long tries = 0;
         boolean sorted = false;
         while(!sorted){
             for(int i = 0; i < numeros.length; i++){
@@ -14,11 +15,13 @@ public class Main {
                 numeros[j] = aux;
             }
             sorted = isSorted(numeros);
+		 tries ++;
         }
         System.out.println("Ordenado ai meu patrão:");
         for(int i = 0; i < numeros.length; i++){
             System.out.println(numeros[i]);
         }
+	System.out.println("Tentativas: " + tries);
 
     }
 
